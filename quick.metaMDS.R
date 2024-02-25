@@ -1,4 +1,5 @@
-quick.metaMDS <- function(dataframe, dimensions) {
+quick.metaMDS <- function(dataframe, dimensions, n.try = 40) {
+  require(vegan)
   metaMDS(comm = dataframe,
           autotransform = FALSE,
           distance = "bray",
@@ -7,7 +8,7 @@ quick.metaMDS <- function(dataframe, dimensions) {
           weakties = TRUE,
           model = "global",
           maxit = 300,
-          try = 40,
+          try = n.try,
           trymax = 100,
           wascores = TRUE)
 }
