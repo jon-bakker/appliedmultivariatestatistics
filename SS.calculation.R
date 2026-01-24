@@ -1,8 +1,8 @@
 SS.calculation <- function(x, variables) {
+  require(tidyverse)
   n <- nrow(x)
-  x %>%
-    dplyr::select(any_of(variables)) %>%
-    dist() %>%
-    `^`(2) %>%
-    sum() / n
+  x |>
+    select(all_of(variables)) |>
+    dist() |>
+    crossprod() / n
 }
