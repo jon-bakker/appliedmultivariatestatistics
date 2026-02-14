@@ -7,8 +7,8 @@ quick.metaMDS <- function(dataframe, k, try = 40) {
           k = k,
           weakties = TRUE,
           model = "global",
-          maxit = 300,
+          maxit = 400,
           try = try,
-          trymax = 100,
+          trymax = 200,
           wascores = TRUE)
 }
